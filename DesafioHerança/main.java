@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
+        funcionario funcionario = new funcionario();
         gerente gerente = new gerente();
         desenvolvedor desenvolvedor = new desenvolvedor();
         estagiario estagiario = new estagiario();
@@ -11,7 +12,6 @@ public class main {
         System.out.println("1: Cadastro");
         System.out.println("2: Login");
         System.out.println("3: Sair");
-        funcionario funcionario = new funcionario();
         while (i <= 0) {
             int x = scan.nextInt();
             switch (x) {
@@ -37,17 +37,29 @@ public class main {
                     int funcao = scan.nextInt();
                     switch (funcao) {
                         case 1:
-                            funcionario.salario = 1.518;
+                            funcionario.salario = 1500.0;
                             System.out.println("Estagiario cadastrado");
+                            System.out.println("Menu");
+                            System.out.println("1: Cadastro");
+                            System.out.println("2: Login");
+                            System.out.println("3: Sair");
                             break;
 
                         case 2:
-                            funcionario.salario = 2.100;
+                            funcionario.salario = 2100.0;
                             System.out.println("Desenvolvedor cadastrado");
+                            System.out.println("Menu");
+                            System.out.println("1: Cadastro");
+                            System.out.println("2: Login");
+                            System.out.println("3: Sair");
                             break;
                         case 3:
-                            funcionario.salario = 3.000;
+                            funcionario.salario = 3000.0;
                             System.out.println("Gerente cadastrado");
+                            System.out.println("Menu");
+                            System.out.println("1: Cadastro");
+                            System.out.println("2: Login");
+                            System.out.println("3: Sair");
                             break;
 
                         default:
@@ -56,7 +68,7 @@ public class main {
                     break;
 
                 case 2:
-                    if (funcionario.salario == 1.518) {
+                    if (funcionario.salario == 1500.0) {
                         System.out.println("Estagiario Logado");
                         System.out.println("Menu");
                         System.out.println("1: Bater Ponto");
@@ -64,20 +76,26 @@ public class main {
                         System.out.println("3: Mostrar Dados");
                         System.out.println("4: Deslogar");
                         int est = scan.nextInt();
-                        switch (est) {
-                            case 1:
-                                funcionario.baterponto();
-                            case 2:
-                                estagiario.fazerTarefa();
-                            case 3:
-                                funcionario.mostrarDados();
-                            case 4:
-                                System.out.println("Deslogando...");
-                                break;
-                            default:
-                                System.out.println("Opção Invalida.");
+                        while (est != 5) {
+                            switch (est) {
+                                case 1:
+                                    funcionario.baterponto();
+                                    break;
+                                case 2:
+                                    estagiario.fazerTarefa();
+                                    break;
+                                case 3:
+                                    funcionario.mostrarDados();
+                                    break;
+                                case 4:
+                                    System.out.println("Deslogando...");
+                                    est = 5;
+                                    break;
+                                default:
+                                    System.out.println("Opção Invalida.");
+                            }
                         }
-                    } else if (funcionario.salario == 2.100) {
+                    } else if (funcionario.salario == 2100.0) {
                         System.out.println("Desenvolvedor Logado");
                         System.out.println("Menu");
                         System.out.println("1: Bater Ponto");
@@ -85,20 +103,26 @@ public class main {
                         System.out.println("3: Mostrar Dados");
                         System.out.println("4: Deslogar");
                         int des = scan.nextInt();
-                        switch (des) {
-                            case 1:
-                                desenvolvedor.baterponto();
-                            case 2:
-                                desenvolvedor.programar();
-                            case 3:
-                                funcionario.mostrarDados();
-                            case 4:
-                                System.out.println("Deslogando...");
-                                break;
-                            default:
-                                System.out.println("Opção Invalida.");
+                        while (des != 5) {
+                            switch (des) {
+                                case 1:
+                                    desenvolvedor.baterponto();
+                                    break;
+                                case 2:
+                                    desenvolvedor.programar();
+                                    break;
+                                case 3:
+                                    funcionario.mostrarDados();
+                                    break;
+                                case 4:
+                                    System.out.println("Deslogando...");
+                                    des = 5;
+                                    break;
+                                default:
+                                    System.out.println("Opção Invalida.");
+                            }
                         }
-                    } else if (funcionario.salario == 3.000) {
+                    } else if (funcionario.salario == 3000.0) {
                         System.out.println("Gerente Logado");
                         System.out.println("Menu");
                         System.out.println("1: Bater Ponto");
@@ -106,19 +130,25 @@ public class main {
                         System.out.println("3: Mostrar Dados");
                         System.out.println("4: Deslogar");
                         int ger = scan.nextInt();
-                        switch (ger) {
-                            case 1:
-                                funcionario.baterponto();
-                            case 2:
-                                gerente.fazerReuniao();
-                            case 3:
-                                funcionario.mostrarDados();
-                            case 4:
-                                System.out.println("Deslogando...");
-                                break;
+                        while (ger != 5) {
+                            switch (ger) {
+                                case 1:
+                                    funcionario.baterponto();
+                                    break;
+                                case 2:
+                                    gerente.fazerReuniao();
+                                    break;
+                                case 3:
+                                    funcionario.mostrarDados();
+                                    break;
+                                case 4:
+                                    System.out.println("Deslogando...");
+                                    ger = 5;
+                                    break;
 
-                            default:
-                                System.out.println("Opção Invalida.");
+                                default:
+                                    System.out.println("Opção Invalida.");
+                            }
                         }
                     } else {
                         System.out.println("Funcionario não existe");

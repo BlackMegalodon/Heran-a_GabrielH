@@ -27,7 +27,7 @@ class funcionario extends pessoa {
 
 class gerente extends funcionario {
     void fazerReuniao() {
-        System.out.println("Reunião agora");
+        System.out.println("Reunião marcada");
     }
 }
 
